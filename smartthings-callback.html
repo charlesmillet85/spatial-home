@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home Glass — SmartThings</title>
+<style>body{font:17px -apple-system,system-ui,sans-serif;background:#0b0d12;color:#e7e9ea;display:grid;place-items:center;min-height:100vh;margin:0;text-align:center}</style>
+</head><body>
+<p id="msg">Returning to Home Glass…</p>
+<script>
+  // SmartThings sends the sign-in result here; it is handed straight back to the app, nothing is kept.
+  var target = 'maison://smartthings-callback' + location.search;
+  location.replace(target);
+  setTimeout(function () { document.getElementById('msg').innerHTML = 'If Home Glass didn\'t open, <a style="color:#1d9bf0" href="' + target.replace(/"/g, '') + '">tap here</a>.'; }, 1500);
+</script>
+</body></html>
